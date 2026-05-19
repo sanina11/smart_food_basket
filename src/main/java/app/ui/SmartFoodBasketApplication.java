@@ -34,6 +34,9 @@ public class SmartFoodBasketApplication extends Application implements View {
     private VBox sidebar;
     private Label totalPriceLabel;
     private Label totalCaloriesLabel;
+    private Label odsDiversityBadge;
+    private Label odsSustainabilityBadge;
+    private Label odsHealthBadge;
     private ListView<String> basketList;
 
     @Override
@@ -156,9 +159,19 @@ public class SmartFoodBasketApplication extends Application implements View {
 
         Button checkoutButton = this.createCheckoutButton();
 
+        this.odsDiversityBadge = new Label("Diversidade");
+        this.odsSustainabilityBadge = new Label("Sustentabilidade");
+        this.odsHealthBadge = new Label("Saúde");
+
+        this.odsDiversityBadge.setStyle("-fx-text-fill: grey;");
+        this.odsSustainabilityBadge.setStyle("-fx-text-fill: grey;");
+        this.odsHealthBadge.setStyle("-fx-text-fill: grey;");
 
         box.getChildren().addAll(
                 title,
+                this.odsDiversityBadge,
+                this.odsSustainabilityBadge,
+                this.odsHealthBadge,
                 this.totalPriceLabel,
                 this.totalCaloriesLabel,
                 basketTitle,
@@ -212,6 +225,9 @@ public class SmartFoodBasketApplication extends Application implements View {
         this.totalPriceLabel.setText(String.format("Custo total: %.2f €", this.model.getTotalPrice()));
         this.totalCaloriesLabel.setText(String.format("Calorias: %.0f kcal", this.model.getTotalCalories()));
         this.refreshBasketList();
+        this.odsSustainabilityBadge.setStyle(this.model.hasMetSustainGoal() ? "-fx-text-fill: green;" : "-fx-text-fill: grey;");
+        this.odsDiversityBadge.setStyle(this.model.hasMetDiversityGoal() ? "-fx-text-fill: green;" : "-fx-text-fill: grey;");
+        this.odsHealthBadge.setStyle(this.model.hasMetVegetableGoal() ? "-fx-text-fill: green;" : "-fx-text-fill: grey;");
     }
 
     @Override

@@ -25,6 +25,16 @@ public class PackagedFood extends FoodItem {
     }
 
     @Override
+    public boolean isBulk() {
+        return false;
+    }
+
+    @Override
+    public boolean hasPlasticPackaging() {
+        return this.packagingMaterial.equals("Plastico");
+    }
+
+    @Override
     public String getUnitLabel() {
         return "€/un.";
     }

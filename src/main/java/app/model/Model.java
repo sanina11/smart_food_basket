@@ -93,6 +93,27 @@ public class Model {
         }
         return totalGrams >= 400.0;
     }
+
+    public boolean hasMetSustainGoal(){
+        if(this.items.isEmpty()){
+            return false;
+        }
+        long bulkCount = 0;
+        for (FoodItem item : this.items){
+            if(item.isBulk()){
+                bulkCount ++;
+            }
+            if(item.hasPlasticPackaging()){
+                return false;
+            }
+        }
+        return bulkCount > this.items.size() / 2;
+    }
+
+    public boolean hasMetDiversityGoal(){
+        return this.items.stream().map(FoodItem::getGroup).distinct().count() >= 4;
+    }
+
     public void loadFromCsv(String path) throws IOException {
 
         BufferedReader reader = new BufferedReader(new FileReader(path));

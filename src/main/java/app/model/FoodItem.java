@@ -18,6 +18,8 @@ public abstract class FoodItem {
     public abstract double getPrice();
     public abstract double getCalories();
     public abstract String getUnitLabel();
+    public abstract boolean isBulk();
+    public abstract boolean hasPlasticPackaging();
 
     public double getWeightInGrams(){
         return 0.0;

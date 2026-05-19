@@ -28,6 +28,15 @@ public class BulkFood extends FoodItem {
     }
 
     @Override
+    public boolean isBulk() {
+        return true;
+    }
+    @Override
+    public boolean hasPlasticPackaging() {
+        return false;
+    }
+
+    @Override
     public String getUnitLabel() {
         return "€/kg.";
     }
