@@ -226,7 +226,7 @@ Linhas com erros de formato são automaticamente rejeitadas e reportadas ao util
 
 ---
 
-##Autores
+Miguel Sanina, João Soares
 
 Desenvolvido por alunos do **2.º ano** da Licenciatura em Engenharia Informática da Escola Superior de Tecnologia e Gestão do Instituto Politécnico de Beja, no âmbito da Unidade Curricular de **Programação Orientada por Objetos**.
 
