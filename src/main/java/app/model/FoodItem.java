@@ -1,3 +1,11 @@
+/*
+ * Smart Food Basket - ODS Edition
+ * Autor: Miguel Sanina - 26874, João Soares - 25961
+ * Programação Orientada por Objetos - IPBeja 2025/2026
+ *
+ * Contém código gerado/refinado com auxílio de IA generativa (Claude).
+ * Detalhes no ficheiro relatorio_ia.txt.
+ */
 package app.model;
 
 /**
