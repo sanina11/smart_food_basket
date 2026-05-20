@@ -125,9 +125,9 @@ O projeto segue o padrão **MVC (Model-View-Controller)** com separação estrit
 Para testar com diferentes catálogos, edita a linha do `start()`:
 
 ```java
-this.model.loadFromCsv("src/main/resources/foods.csv");        // 10 itens
-this.model.loadFromCsv("src/main/resources/foods_medium.csv"); // 20 itens
-this.model.loadFromCsv("src/main/resources/foods_large.csv");  // 30 itens + 5 com erros
+this.basketModel.loadFromCsv("src/main/resources/foods.csv");        // 10 itens
+this.basketModel.loadFromCsv("src/main/resources/foods_medium.csv"); // 20 itens
+this.basketModel.loadFromCsv("src/main/resources/foods_large.csv");  // 30 itens + 5 com erros
 ```
 
 ---
@@ -140,7 +140,7 @@ smart_food_basket_tp/
 │   ├── main/
 │   │   ├── java/
 │   │   │   └── app/
-│   │   │       ├── model/
+│   │   │       ├── basketModel/
 │   │   │       │   ├── FoodGroup.java      # Enum dos grupos alimentares
 │   │   │       │   ├── FoodItem.java       # Classe abstrata base
 │   │   │       │   ├── PackagedFood.java   # Alimentos embalados
@@ -156,7 +156,7 @@ smart_food_basket_tp/
 │   │       └── images/                     # Imagens dos alimentos
 │   └── test/
 │       └── java/
-│           └── app/model/
+│           └── app/basketModel/
 │               └── ModelTest.java          # Testes JUnit
 ├── pom.xml
 ├── module-info.java
